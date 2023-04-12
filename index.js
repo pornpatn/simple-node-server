@@ -6,7 +6,7 @@ const userModel = require("./models");
 const mangodbUri = "mongodb+srv://mongouser:q16lzr5BgsfR7H0I@nikamanon.h6ktrj4.mongodb.net/simpleDB?retryWrites=true&w=majority";
 
 const app = express();
-const port = 80;
+const port = 3001;
 
 const corsOptions = {
     origin: '*',
