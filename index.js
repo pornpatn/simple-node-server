@@ -6,9 +6,13 @@ const userModel = require("./models");
 const mangodbUri = "mongodb+srv://mongouser:q16lzr5BgsfR7H0I@nikamanon.h6ktrj4.mongodb.net/simpleDB?retryWrites=true&w=majority";
 
 const app = express();
-const port = 3001;
+const port = 80;
 
-app.use(cors());
+const corsOptions = {
+    origin: '*',
+    credentials: true,
+};
+app.use(cors(corsOptions));
 
 mongoose.connect(mangodbUri,
     {
