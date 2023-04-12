@@ -6,7 +6,7 @@ const userModel = require("./models");
 const mangodbUri = "mongodb+srv://mongouser:q16lzr5BgsfR7H0I@nikamanon.h6ktrj4.mongodb.net/simpleDB?retryWrites=true&w=majority";
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 const corsOptions = {
     origin: '*',
@@ -37,4 +37,7 @@ app.get('/details', async (req, res) => {
     res.send(user);
 });
 
-app.listen(port, () => console.log(`Hello world app listening on port ${port}!`));
+app.listen(port, (err) => {
+    if (err) throw err;
+    console.log(`Hello world app listening on port ${port}!`);
+});
